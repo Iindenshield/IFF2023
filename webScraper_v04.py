@@ -1,8 +1,13 @@
+"""
+LINEE GUIDA:
+Credits sintetici (regista, produttore, cast), nazione, anno, durata + sinossi breve da riportare in inglese e in italiano. 
+"""
+
 import bs4, requests, webbrowser
 
 #FILE --------------------------------------------------------------------------------------------------------
-html_file = 'C:/Users/lindenshield/Downloads/A Runner - FilmFreeway.html'
-info_file = 'C:/Users/lindenshield/Desktop/info.txt'
+html_file = '*/*.html'
+info_file = '*/info.txt'
 #------------------------------------------------------------------------------------------------------------
 
 credits_diz = {'Director': [], 'Writer': [], 'Producer': []}
@@ -55,14 +60,3 @@ with open(info_file, 'w', encoding="utf8") as info:
 #crea cartella per ogni corto con:
 #    info.txt
 #    jpg e trailer
-
-#GET TRAILER
-"""
-base_url = 'https://filmfreeway-production-storage-01.s3.us-west-2.amazonaws.com/press_kits/trailers/'
-
-trailer_list = soup.find_all('div', class_="project-steps__step project-steps__step--3 active show")
-
-for item in trailer_list:
-    for link in item.find_all('a', href=True):
-        print(link['href'])
-"""
